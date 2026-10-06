@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hafsa Tariq - CV</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body>
 
-  <div class="actions-wrapper">
-    <button id="download-btn" class="download-btn" onclick="downloadResume()">
-      <i class="fa-solid fa-file-pdf"></i> Save as PDF
-    </button>
-  </div>
 
   <div id="cv-element" class="cv-container">
 
@@ -51,8 +52,6 @@
         <h3 class="skill-group-title">UI / UX &amp; TOOLS</h3>
         <div class="skill-item"><div class="skill-label"><span>Tailwind CSS</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div></div>
         <div class="skill-item"><div class="skill-label"><span>Bootstrap</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>Material UI</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div></div>
-        <div class="skill-item"><div class="skill-label"><span>Figma</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div></div>
         <div class="skill-item"><div class="skill-label"><span>Git / GitHub</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div></div>
         <div class="skill-item"><div class="skill-label"><span>VS Code</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" style="width:95%;"></div></div></div>
       </div>
@@ -97,7 +96,7 @@
 
       <div class="section-main">
         <h2 class="main-title"><span class="icon-box"><i class="fa-solid fa-user"></i></span><span class="title-text">PROFESSIONAL SUMMARY</span></h2>
-        <p class="summary-text">Computer Science undergraduate at Comsats University with hands-on experience in OOP , Data Structures , database management system, coputer networks, artificial intelligence. Delivered five end to end acdemic software projects spanning C++,Java , Python, and full-stack development. Eager to contribute strong problem-solving skills and passion for technology to  a dynamic software engineering role.</p>
+        <p class="summary-text">Computer Science undergraduate at COMSATS University with hands-on experience in OOP, Data Structures, Database Management Systems, Computer Networks, and Artificial Intelligence. Delivered five end-to-end academic software projects spanning C++, Java, Python, and full-stack development. Eager to contribute strong problem-solving skills and passion for technology to a dynamic software engineering role.</p>
       </div>
 
       <div class="section-main">
@@ -106,16 +105,15 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-left">
-              <span class="timeline-marker"></span>
               <div class="timeline-date"><strong>July 2026</strong><br>–<br><strong>Present</strong></div>
             </div>
             <div class="timeline-divider"></div>
             <div class="timeline-content">
-              <h3>Mern Stack Intern</h3>
+              <h3>MERN Stack Intern</h3>
               <p class="timeline-company">Codinity Solution</p>
               <ul>
-                <li>working on full-stack web development using MERN Stack(MongoDB,Express.js,React.js,Node.js).</li>
-                <li>Assisting in building and integrating RESTful APIs for company projects .</li>
+                <li>Working on full-stack web development using MERN Stack (MongoDB, Express.js, React.js, Node.js).</li>
+                <li>Assisting in building and integrating RESTful APIs for company projects.</li>
                 <li>Collaborating with development team on debugging and feature implementation.</li>
                 <li>Gaining hands-on experience with Git/GitHub and agile workflows.</li>
               </ul>
@@ -124,16 +122,15 @@
 
           <div class="timeline-item last">
             <div class="timeline-left">
-              <span class="timeline-marker"></span>
               <div class="timeline-date"><strong>June 2026</strong></div>
             </div>
             <div class="timeline-divider"></div>
             <div class="timeline-content">
-              <h3>LeaderShip and Volunteer training Program</h3>
-              <p class="timeline-company">Al-Khidmat Foundation, Lahore.</p>
+              <h3>Leadership and Volunteer Training Program</h3>
+              <p class="timeline-company">Al-Khidmat Foundation, Lahore</p>
               <ul>
                 <li>Completed 8 days leadership and community service training covering teamwork, first aid, and disaster response.</li>
-                <li>participated in community outreach, including a volunteer visit to Fountain house to engage with underprivileged communities.</li>
+                <li>Participated in community outreach, including a volunteer visit to Fountain House to engage with underprivileged communities.</li>
                 <li>Presented a macro-project as part of program's final leadership showcase.</li>
               </ul>
             </div>
@@ -145,35 +142,25 @@
       <div class="section-main">
         <h2 class="main-title"><span class="icon-box"><i class="fa-solid fa-folder-open"></i></span><span class="title-text">FEATURED PROJECTS</span></h2>
         <div class="projects-grid">
-          <div class="project-card" onclick="openProject('https://weather-application-wheat-pi.vercel.app','Weather Application')">
+          <div class="project-card">
             <img src="images/project1.jpg" alt="Weather Application">
             <h3>Weather Application</h3>
             <p class="project-desc">A responsive weather app that fetches real-time data from a weather API, showing live temperature, humidity, and multi-day forecasts for any searched city.</p>
             <p class="project-tech">JavaScript, HTML, CSS, Weather API</p>
           </div>
-          <div class="project-card" onclick="openProject('https://git-hub-profile-finder-flame-one.vercel.app','GitHub Profile Finder')">
+          <div class="project-card">
             <img src="images/project2.jpg" alt="GitHub Profile Finder">
             <h3>GitHub Profile Finder</h3>
             <p class="project-desc">A search tool that queries the GitHub REST API by username and displays profile details, public repositories, followers, and following counts.</p>
             <p class="project-tech">JavaScript, GitHub REST API, HTML, CSS</p>
           </div>
-          <div class="project-card" onclick="openProject('https://json-place-holder-virid.vercel.app','JSON-Placeholder Dashboard')">
+          <div class="project-card">
             <img src="images/project3.jpg" alt="JSON-Placeholder Dashboard">
             <h3>JSON-Placeholder Dashboard</h3>
             <p class="project-desc">A dashboard that fetches posts and comments from the JSONPlaceholder REST API and displays the mock data in a clean, organized layout.</p>
             <p class="project-tech">JavaScript, REST API, Fetch, HTML, CSS</p>
           </div>
         </div>
-        <p class="back-to-cv-hint"><i class="fa-solid fa-circle-info"></i> Click any project to preview it right here, with a button to return to your resume.</p>
-      </div>
-
-      <div id="project-overlay" class="project-overlay">
-        <div class="project-overlay-bar">
-          <button class="back-btn" onclick="closeProject()"><i class="fa-solid fa-arrow-left"></i> Back to Resume</button>
-          <span id="project-overlay-title" class="project-overlay-title"></span>
-          <a id="project-overlay-newtab" class="newtab-btn" href="#" target="_blank" rel="noopener noreferrer">Open in New Tab <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <iframe id="project-overlay-frame" class="project-overlay-frame" src="" title="Project preview"></iframe>
       </div>
 
       <div class="section-main">
@@ -183,54 +170,28 @@
             <i class="fa-solid fa-trophy achievement-icon gold"></i>
             <div class="achievement-text">
               <h3>Python Programming</h3>
-              <p>Udemy <br>2023</p>
+              <p>Udemy<br>2023</p>
             </div>
           </div>
           <div class="achievement-card">
             <i class="fa-solid fa-medal achievement-icon gold"></i>
             <div class="achievement-text">
               <h3>CCNA Networks 2026</h3>
-              <p>CISCO Networing Academy</p>
+              <p>CISCO Networking Academy</p>
             </div>
           </div>
           <div class="achievement-card">
-            <i class="fa-solid fa-paintbrush achievement-icon blue"></i>
+            <i class="fa-solid fa-paintbrush achievement-icon green"></i>
             <div class="achievement-text">
-              <h3>CANVA certified</h3>
-              <p>creative craftsman<br>2025</p>
+              <h3>CANVA Certified</h3>
+              <p>Creative Craftsman<br>2025</p>
             </div>
           </div>
           <div class="achievement-card">
             <i class="fa-solid fa-certificate achievement-icon red"></i>
             <div class="achievement-text">
-              <h3>CERTIFICATE OF EXCELLENCE</h3>
+              <h3>Certificate of Excellence</h3>
               <p>HRCA Pakistan<br>2022</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-main">
-        <h2 class="main-title"><span class="icon-box"><i class="fa-solid fa-users"></i></span><span class="title-text">REFERENCES</span></h2>
-        <div class="references-grid">
-          <div class="reference-card">
-            <img src="images/ref1.jpg" alt="Ayyaz Muhammad">
-            <div>
-              <h3>Ayyaz Muhammad</h3>
-              <p class="ref-role">Acdemic Incharge</p>
-              <p class="ref-company">Punjab University</p>
-              <p>ayyaz@gmail.com</p>
-              <p>+92 321 7654321</p>
-            </div>
-          </div>
-          <div class="reference-card">
-            <img src="images/ref2.jpg" alt="Tahir Umar">
-            <div>
-              <h3>Tahir Umar</h3>
-              <p class="ref-role">Manager</p>
-              <p class="ref-company">Standpharm (Pvt.) Ltd.</p>
-              <p>TahirUmar@standpharm.com</p>
-              <p>+92 300 9876543</p>
             </div>
           </div>
         </div>
