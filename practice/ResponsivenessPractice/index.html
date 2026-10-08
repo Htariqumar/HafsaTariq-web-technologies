@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        header{
+            background:lightblue;
+            padding:20px;
+            display:flex;
+            align-items:centre;
+        }
+
+        #menu-btn{
+            display:none;
+            font-size: 28px;
+            background:none;
+            border:none;
+            color:darkblue;
+            cursor:pointer;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-right:20px;
+        }
+
+        @media(max-width:768px){
+            #menu-btn{
+                display:block;
+            }
+            nav{
+                position:fixed;
+                top:0;
+                left:-220px;
+                width:220px;
+                height:100%;
+                background:#333;
+                padding-top:60px;
+                transition: left 0.3s;
+            }
+
+            nav a {
+                display:block;
+                padding: 15px 20px;
+                margin:0;
+            }
+
+            nav.open{
+                left:0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+
+        <button id="menu-btn">&#9776;</button>
+
+        <nav id="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <script>
+
+
+        //find button:
+        const btn=document.getElementById("menu-btn");
+        const menu=document.getElementById("menu");
+
+        //when button is clicked do this 
+        btn.addEventListener("click",function(){
+            menu.classList.toggle("open");
+            
+        });
+
+    </script>
+    
+</body>
+</html>
