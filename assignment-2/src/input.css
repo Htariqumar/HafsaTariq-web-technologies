@@ -1,1 +1,96 @@
 @import "tailwindcss";
+
+body {
+  @apply bg-[#ece9e3] text-stone-900;
+}
+
+.announcement {
+  @apply bg-stone-900 text-white text-sm py-2.5 text-center;
+}
+
+/* ---------- Header ---------- */
+.header {
+  @apply relative z-30 p-3;
+}
+
+.header-bar {
+  @apply bg-white rounded-2xl shadow-sm flex items-center justify-between px-6;
+}
+
+.logo {
+  @apply text-2xl font-bold;
+}
+
+.nav {
+  @apply flex gap-8 text-sm font-medium uppercase;
+}
+
+.nav-link {
+  @apply block py-5;
+}
+
+.icons {
+  @apply flex items-center gap-4;
+}
+
+.icon {
+  @apply text-xl;
+}
+
+/* ---------- Dropdown menu ---------- */
+.dropdown {
+  @apply hidden absolute inset-x-0 top-full -mt-3 bg-[#ece9e3] px-3 pt-3 pb-10 text-sm normal-case font-normal;
+}
+
+.nav-item:hover .dropdown {
+  @apply block;
+}
+
+.dropdown-title {
+  @apply bg-[#e0dacf] rounded-2xl py-5 text-center font-medium;
+}
+
+.dropdown-columns {
+  @apply flex flex-wrap gap-x-16 gap-y-8 pt-10;
+}
+
+.dropdown-top-links {
+  @apply space-y-6 font-semibold uppercase;
+}
+
+.dropdown-heading {
+  @apply font-semibold uppercase mb-6;
+}
+
+.dropdown-list {
+  @apply space-y-3 text-stone-600;
+}
+
+.dropdown-list a:hover {
+  @apply text-stone-900;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  @apply mx-3 flex items-end min-h-[70vh] rounded-3xl bg-linear-to-br from-stone-500 to-stone-800 p-6;
+}
+
+.hero-content {
+  @apply max-w-xl text-white md:ml-auto md:text-right;
+}
+
+.hero-label {
+  @apply font-mono text-xs uppercase tracking-widest mb-2;
+}
+
+.hero-title {
+  @apply text-3xl md:text-5xl font-semibold leading-tight mb-6;
+}
+
+.hero-buttons {
+  @apply flex gap-3 md:justify-end;
+}
+
+.hero-button {
+  @apply w-36 py-2.5 text-center bg-white text-black rounded-full text-sm font-semibold uppercase hover:bg-stone-200;
+}
