@@ -379,6 +379,46 @@ body {
     }
   }
 }
+.tiles {
+  margin-inline: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 3);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 3);
+}
+.tile {
+  display: flex;
+  aspect-ratio: 4/5;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-3xl);
+}
+.tile-label {
+  border-radius: calc(infinity * 1px);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: var(--color-white);
+  padding-inline: calc(var(--spacing) * 5);
+  padding-block: calc(var(--spacing) * 1.5);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+.tile-new {
+  background-color: #5f7487;
+}
+.tile-men {
+  background-color: #564a4a;
+}
+.tile-women {
+  background-color: #916d68;
+}
+.tile-best {
+  background-color: #848b80;
+}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -503,6 +543,11 @@ body {
   syntax: "*";
   inherits: false;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -533,6 +578,7 @@ body {
       --tw-gradient-to-position: 100%;
       --tw-tracking: initial;
       --tw-leading: initial;
+      --tw-border-style: solid;
     }
   }
 }

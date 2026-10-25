@@ -94,3 +94,21 @@ body {
 .hero-button {
   @apply w-36 py-2.5 text-center bg-white text-black rounded-full text-sm font-semibold uppercase hover:bg-stone-200;
 }
+
+/* ---------- Category tiles ---------- */
+.tiles {
+  @apply mx-3 mt-3 grid grid-cols-4 gap-3;
+}
+
+.tile {
+  @apply flex items-center justify-center aspect-[4/5] rounded-3xl;
+}
+
+.tile-label {
+  @apply border border-white text-white rounded-full px-5 py-1.5 text-sm font-medium uppercase;
+}
+
+.tile-new   { @apply bg-[#5f7487]; }
+.tile-men   { @apply bg-[#564a4a]; }
+.tile-women { @apply bg-[#916d68]; }
+.tile-best  { @apply bg-[#848b80]; }
