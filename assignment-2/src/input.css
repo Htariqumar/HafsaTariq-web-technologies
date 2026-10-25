@@ -7,6 +7,7 @@ body {
 .announcement {
   @apply sticky top-0 z-40 h-10 flex items-center justify-center bg-stone-900 text-white text-sm;
 }
+
 /* ---------- Header ---------- */
 .header {
   @apply sticky top-10 z-30 p-3;
@@ -21,8 +22,9 @@ body {
 }
 
 .nav {
-  @apply flex gap-8 text-base font-medium uppercase;
+  @apply flex gap-8 text-sm font-medium uppercase;
 }
+
 .nav-link {
   @apply block py-5;
 }
@@ -140,6 +142,7 @@ body {
 .product-slider::-webkit-scrollbar {
   display: none;
 }
+
 .product-card {
   @apply flex-none w-[27%] min-w-64 snap-start bg-white rounded-3xl p-6 flex flex-col;
 }
@@ -211,7 +214,6 @@ body {
 .promo-two   { @apply bg-linear-to-br from-orange-400 to-rose-700; }
 .promo-three { @apply bg-linear-to-br from-sky-500 to-stone-600; }
 
-
 /* ---------- Info cards ---------- */
 .info {
   @apply mx-3 mt-3 grid grid-cols-3 gap-3;
@@ -276,4 +278,173 @@ body {
 
 .footer-bottom {
   @apply border-t border-stone-700 pt-6 text-xs text-stone-400;
+}
+
+/* ---------- Product page ---------- */
+.product-page {
+  @apply mx-3 mt-2;
+}
+
+.breadcrumb {
+  @apply flex gap-2 px-2 py-4 text-sm text-stone-600;
+}
+
+.breadcrumb a:hover {
+  @apply underline;
+}
+
+.product-layout {
+  @apply grid grid-cols-[3fr_2fr] gap-6 items-start;
+}
+
+/* Left side: images */
+.gallery {
+  @apply grid grid-cols-2 gap-3;
+}
+
+.gallery-image {
+  @apply flex items-start p-6 aspect-square rounded-3xl bg-stone-200;
+}
+
+.gallery-image:first-child {
+  @apply col-span-2 aspect-[4/3];
+}
+
+.gallery-badge {
+  @apply bg-white text-sm font-medium uppercase rounded-full px-4 py-1.5;
+}
+
+/* Right side: details card */
+.detail-card {
+  @apply sticky top-32 bg-white rounded-3xl p-8;
+}
+
+.detail-title {
+  @apply font-serif text-4xl leading-tight;
+}
+
+.detail-also {
+  @apply font-mono text-sm uppercase tracking-wide text-stone-600 mt-3;
+}
+
+.detail-also a {
+  @apply underline;
+}
+
+.detail-price-row {
+  @apply flex items-center gap-3 mt-6;
+}
+
+.detail-price {
+  @apply text-2xl font-semibold;
+}
+
+.shipping-pill {
+  @apply bg-[#e0dacf] text-sm font-medium italic rounded-full px-3 py-1;
+}
+
+.detail-description {
+  @apply mt-6 text-stone-700 leading-relaxed;
+}
+
+/* ---------- Product options ---------- */
+.option-label {
+  @apply font-mono text-sm uppercase mt-10 mb-3;
+}
+
+.color-note {
+  @apply text-stone-500 normal-case;
+}
+
+.swatches {
+  @apply flex gap-3;
+}
+
+.swatch {
+  @apply w-10 h-10 rounded-full border border-stone-300;
+}
+
+.swatch-selected {
+  @apply ring-2 ring-offset-2 ring-stone-900;
+}
+
+.size-tabs {
+  @apply flex gap-6 mt-8 mb-4 font-mono text-sm uppercase;
+}
+
+.size-tab {
+  @apply pb-1 text-stone-500 border-b border-transparent;
+}
+
+.size-tab-active {
+  @apply text-stone-900 border-stone-900;
+}
+
+.sizes {
+  @apply grid grid-cols-7 gap-2;
+}
+
+.size {
+  @apply border border-stone-300 py-3 text-center text-sm font-medium hover:border-stone-900;
+}
+
+.size-sold-out {
+  @apply text-stone-300 line-through hover:border-stone-300;
+}
+
+.fit-note {
+  @apply mt-5 text-sm text-stone-700;
+}
+
+.fit-note a {
+  @apply underline;
+}
+
+/* ---------- Quantity selector ---------- */
+.qty-box {
+  @apply inline-flex items-center border border-stone-300 rounded-full;
+}
+
+.qty-button {
+  @apply w-12 h-12 flex items-center justify-center text-xl rounded-full hover:bg-stone-100;
+}
+
+.qty-input {
+  @apply w-12 text-center text-lg font-medium bg-transparent outline-none;
+  -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-inner-spin-button,
+.qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.detail-button {
+  @apply mt-6 w-full bg-stone-900 text-white rounded-full py-4 font-semibold uppercase hover:bg-stone-700;
+}
+
+.detail-note {
+  @apply mt-4 text-center text-sm;
+}
+
+/* ---------- Product details section ---------- */
+.about {
+  @apply mt-3 mb-3 grid grid-cols-2 gap-10 items-center bg-white rounded-3xl p-8;
+}
+
+.about-image {
+  @apply aspect-[3/2] rounded-2xl bg-stone-200;
+}
+
+.about-text {
+  @apply flex flex-col gap-10;
+}
+
+.about-heading {
+  @apply font-semibold uppercase mb-3;
+}
+
+.about-body {
+  @apply text-stone-700 leading-relaxed;
 }
