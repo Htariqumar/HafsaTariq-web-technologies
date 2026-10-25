@@ -112,3 +112,166 @@ body {
 .tile-men   { @apply bg-[#564a4a]; }
 .tile-women { @apply bg-[#916d68]; }
 .tile-best  { @apply bg-[#848b80]; }
+
+/* ---------- Best sellers ---------- */
+.products {
+  @apply mx-3 mt-12;
+}
+
+.products-header {
+  @apply flex items-center justify-between mb-6 px-1;
+}
+
+.section-title {
+  @apply text-xl font-medium uppercase underline underline-offset-8;
+}
+
+.arrows {
+  @apply flex gap-2;
+}
+
+.arrow-button {
+  @apply w-12 h-12 text-lg rounded-full border border-stone-900 flex items-center justify-center hover:bg-white;
+}
+
+.product-slider {
+  @apply flex gap-3 overflow-x-auto snap-x snap-mandatory pb-3;
+}
+
+.product-card {
+  @apply flex-none w-[27%] min-w-64 snap-start bg-white rounded-3xl p-6 flex flex-col;
+}
+
+/* every card keeps space for the badge, so cards without one still line up */
+.product-card::before {
+  content: "";
+  height: 2rem;
+}
+
+.product-badge {
+  @apply self-start -mt-8 bg-[#ece9e3] text-sm font-medium uppercase rounded-full px-4 py-1.5;
+}
+
+.product-image {
+  @apply aspect-square bg-stone-100 rounded-xl my-6;
+}
+
+.product-name {
+  @apply text-base font-medium uppercase;
+}
+
+.product-color {
+  @apply text-base text-stone-600 mt-1;
+}
+
+.product-bottom {
+  @apply flex items-center justify-between mt-4;
+}
+
+.product-swatch {
+  @apply w-8 h-8 rounded-full border border-stone-300;
+}
+
+.product-price {
+  @apply text-base font-medium;
+}
+
+.add-button {
+  @apply mt-5 bg-stone-900 text-white rounded-full py-3 text-base font-semibold hover:bg-stone-700;
+}
+
+/* ---------- Promo tiles ---------- */
+.promos {
+  @apply mx-3 mt-12 grid grid-cols-3 gap-3;
+}
+
+.promo {
+  @apply flex flex-col aspect-[3/4] rounded-3xl p-6 text-white;
+}
+
+.promo-heading {
+  @apply flex flex-1 items-center justify-center;
+}
+
+.promo-title {
+  @apply font-serif text-5xl leading-tight text-center;
+}
+
+.promo-buttons {
+  @apply flex gap-3;
+}
+
+.promo-button {
+  @apply flex-1 border border-white rounded-full py-2.5 text-center text-sm font-medium uppercase hover:bg-white hover:text-black;
+}
+
+.promo-one   { @apply bg-linear-to-br from-emerald-800 to-stone-700; }
+.promo-two   { @apply bg-linear-to-br from-orange-400 to-rose-700; }
+.promo-three { @apply bg-linear-to-br from-sky-500 to-stone-600; }
+
+
+/* ---------- Info cards ---------- */
+.info {
+  @apply mx-3 mt-3 grid grid-cols-3 gap-3;
+}
+
+.info-card {
+  @apply bg-white rounded-2xl p-8 min-h-64;
+}
+
+.info-title {
+  @apply font-mono text-xs uppercase tracking-widest mb-8;
+}
+
+.info-text {
+  @apply leading-relaxed;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  @apply bg-stone-900 text-white mt-3 px-12 py-16 flex flex-col gap-16;
+}
+
+.footer-top {
+  @apply grid grid-cols-2 gap-10;
+}
+
+.footer-columns {
+  @apply grid grid-cols-3 gap-6;
+}
+
+.footer-heading {
+  @apply font-mono text-xs uppercase tracking-widest mb-8;
+}
+
+.footer-list {
+  @apply space-y-4 text-sm;
+}
+
+.footer-list a:hover {
+  @apply underline;
+}
+
+.signup {
+  @apply flex items-center bg-white rounded-full pl-5 pr-3 py-2 max-w-md;
+}
+
+.signup-input {
+  @apply flex-1 min-w-0 bg-transparent text-stone-900 outline-none py-2;
+}
+
+.signup-button {
+  @apply text-stone-900 text-sm font-semibold uppercase px-4;
+}
+
+.social {
+  @apply flex gap-3;
+}
+
+.social-link {
+  @apply w-12 h-12 rounded-full border border-white flex items-center justify-center text-xl hover:bg-white hover:text-stone-900;
+}
+
+.footer-bottom {
+  @apply border-t border-stone-700 pt-6 text-xs text-stone-400;
+}
