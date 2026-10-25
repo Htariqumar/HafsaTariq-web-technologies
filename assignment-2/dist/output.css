@@ -211,15 +211,21 @@ body {
   color: var(--color-stone-900);
 }
 .announcement {
+  position: sticky;
+  top: 0px;
+  z-index: 40;
+  display: flex;
+  height: calc(var(--spacing) * 10);
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-stone-900);
-  padding-block: calc(var(--spacing) * 2.5);
-  text-align: center;
   font-size: var(--text-sm);
   line-height: var(--tw-leading, var(--text-sm--line-height));
   color: var(--color-white);
 }
 .header {
-  position: relative;
+  position: sticky;
+  top: calc(var(--spacing) * 10);
   z-index: 30;
   padding: calc(var(--spacing) * 3);
 }
@@ -242,8 +248,8 @@ body {
 .nav {
   display: flex;
   gap: calc(var(--spacing) * 8);
-  font-size: var(--text-sm);
-  line-height: var(--tw-leading, var(--text-sm--line-height));
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
@@ -483,7 +489,10 @@ body {
   --tw-scroll-snap-strictness: mandatory;
   gap: calc(var(--spacing) * 3);
   overflow-x: auto;
-  padding-bottom: calc(var(--spacing) * 3);
+  scrollbar-width: none;
+}
+.product-slider::-webkit-scrollbar {
+  display: none;
 }
 .product-card {
   display: flex;

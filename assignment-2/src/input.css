@@ -5,12 +5,11 @@ body {
 }
 
 .announcement {
-  @apply bg-stone-900 text-white text-sm py-2.5 text-center;
+  @apply sticky top-0 z-40 h-10 flex items-center justify-center bg-stone-900 text-white text-sm;
 }
-
 /* ---------- Header ---------- */
 .header {
-  @apply relative z-30 p-3;
+  @apply sticky top-10 z-30 p-3;
 }
 
 .header-bar {
@@ -22,9 +21,8 @@ body {
 }
 
 .nav {
-  @apply flex gap-8 text-sm font-medium uppercase;
+  @apply flex gap-8 text-base font-medium uppercase;
 }
-
 .nav-link {
   @apply block py-5;
 }
@@ -135,9 +133,13 @@ body {
 }
 
 .product-slider {
-  @apply flex gap-3 overflow-x-auto snap-x snap-mandatory pb-3;
+  @apply flex gap-3 overflow-x-auto snap-x snap-mandatory;
+  scrollbar-width: none;
 }
 
+.product-slider::-webkit-scrollbar {
+  display: none;
+}
 .product-card {
   @apply flex-none w-[27%] min-w-64 snap-start bg-white rounded-3xl p-6 flex flex-col;
 }
