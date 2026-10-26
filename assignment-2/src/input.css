@@ -37,6 +37,19 @@ body {
   @apply text-xl;
 }
 
+/* hamburger: hidden on desktop, shown on phone */
+.menu-toggle {
+  @apply hidden;
+}
+
+.menu-button {
+  @apply hidden text-2xl cursor-pointer;
+}
+
+.icon-close {
+  @apply hidden;
+}
+
 /* ---------- Dropdown menu ---------- */
 .dropdown {
   @apply hidden absolute inset-x-0 top-full -mt-3 bg-[#ece9e3] px-3 pt-3 pb-10 text-sm normal-case font-normal;
@@ -76,7 +89,7 @@ body {
 }
 
 .hero-content {
-  @apply max-w-xl text-white md:ml-auto md:text-right;
+  @apply max-w-xl ml-auto text-right text-white;
 }
 
 .hero-label {
@@ -84,11 +97,11 @@ body {
 }
 
 .hero-title {
-  @apply text-3xl md:text-5xl font-semibold leading-tight mb-6;
+  @apply text-5xl font-semibold leading-tight mb-6;
 }
 
 .hero-buttons {
-  @apply flex gap-3 md:justify-end;
+  @apply flex gap-3 justify-end;
 }
 
 .hero-button {
@@ -297,7 +310,6 @@ body {
   @apply grid grid-cols-[3fr_2fr] gap-6 items-start;
 }
 
-/* Left side: images */
 .gallery {
   @apply grid grid-cols-2 gap-3;
 }
@@ -314,7 +326,6 @@ body {
   @apply bg-white text-sm font-medium uppercase rounded-full px-4 py-1.5;
 }
 
-/* Right side: details card */
 .detail-card {
   @apply sticky top-32 bg-white rounded-3xl p-8;
 }
@@ -447,4 +458,96 @@ body {
 
 .about-body {
   @apply text-stone-700 leading-relaxed;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   Tablet and phone: up to 1023px
+   Phone only: up to 767px
+   Ye hissa file ke END mein rahe, kyunke baad wala
+   rule jeetta hai. Phone wala tablet wale ko override karta hai.
+   ===================================================== */
+
+/* ---------- Tablet and phone (max 1023px) ---------- */
+@media (max-width: 1023px) {
+
+  .footer-top    { @apply grid-cols-1; }
+
+  .promo         { @apply p-4; }
+  .promo-title   { @apply text-3xl; }
+  .promo-button  { @apply text-xs; }
+
+  .info-card     { @apply p-5; }
+
+  .product-layout { @apply grid-cols-1; }
+  .detail-card    { @apply static; }
+  .about          { @apply grid-cols-1; }
+}
+
+/* ---------- Phone (max 767px) ---------- */
+@media (max-width: 767px) {
+
+  .announcement { @apply text-xs; }
+
+  /* Header: hamburger | logo | icons */
+  .header-bar   { @apply grid grid-cols-[1fr_auto_1fr] px-4; }
+  .menu-button  { @apply block; }
+  .logo         { @apply py-3; }
+  .icons        { @apply justify-self-end; }
+
+  /* Menu panel: hidden until the hamburger is tapped */
+  .nav {
+    @apply hidden absolute inset-x-3 top-full flex-col gap-1 p-4 text-base bg-white rounded-2xl shadow-lg;
+  }
+  .nav-link { @apply py-3; }
+
+  .header:has(.menu-toggle:checked) .nav        { @apply flex; }
+  .header:has(.menu-toggle:checked) .icon-open  { @apply hidden; }
+  .header:has(.menu-toggle:checked) .icon-close { @apply inline; }
+
+  /* no hover dropdowns on touch screens */
+  .nav-item:hover .dropdown { @apply hidden; }
+
+  /* Hero */
+  .hero          { @apply min-h-[75vh] p-5; }
+  .hero-content  { @apply ml-0 text-left; }
+  .hero-title    { @apply text-3xl; }
+  .hero-buttons  { @apply justify-start; }
+  .hero-button   { @apply w-32; }
+
+  /* Category tiles: swipe sideways */
+  .tiles {
+    @apply flex overflow-x-auto snap-x snap-mandatory;
+    scrollbar-width: none;
+  }
+  .tiles::-webkit-scrollbar { display: none; }
+  .tile { @apply flex-none w-[72%] snap-start; }
+
+  /* Best sellers */
+  .section-title { @apply text-lg; }
+  .arrows        { @apply hidden; }
+  .product-card  { @apply w-[78%]; }
+
+  /* Promo tiles: one per row */
+  .promos        { @apply grid-cols-1; }
+  .promo         { @apply p-6; }
+  .promo-title   { @apply text-4xl; }
+  .promo-button  { @apply text-sm; }
+
+  /* Info cards: one per row */
+  .info          { @apply grid-cols-1; }
+  .info-card     { @apply p-6 min-h-0; }
+
+  /* Footer */
+  .footer          { @apply px-6 py-12 gap-12; }
+  .footer-columns  { @apply grid-cols-2; }
+  .social-link     { @apply w-10 h-10 text-lg; }
+
+  /* Product page */
+  .gallery-image { @apply p-4; }
+  .detail-card   { @apply p-5; }
+  .detail-title  { @apply text-3xl; }
+  .sizes         { @apply grid-cols-5; }
+  .about         { @apply p-5; }
 }
