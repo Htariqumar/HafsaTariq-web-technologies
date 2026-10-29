@@ -204,7 +204,32 @@
       <!-- Icons -->
       <div class="flex items-center justify-self-end gap-4">
         <a href="#" aria-label="Search"><i class="bi bi-search text-xl"></i></a>
-        <a href="checkout.html" aria-label="Cart"><i class="bi bi-bag text-xl"></i></a>
+
+        <!-- Cart Icon & Mini-Cart Panel (Task 3) -->
+        <div class="relative cart-wrapper">
+          <a href="checkout.html" id="cart-btn" aria-label="Cart" class="relative flex items-center text-stone-900 hover:text-stone-600">
+            <i class="bi bi-bag text-xl"></i>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </a>
+
+          <!-- Mini-cart dropdown panel -->
+          <div id="mini-cart-panel" class="mini-cart-panel hidden">
+            <div class="mini-cart-header">
+              <h4 class="font-bold text-base text-stone-900">Your Cart</h4>
+              <span id="mini-cart-count" class="text-xs text-stone-500 font-medium">0 items</span>
+            </div>
+            <div id="mini-cart-items" class="mini-cart-items-list">
+              <p class="empty-cart-msg">Your cart is empty.</p>
+            </div>
+            <div class="mini-cart-footer">
+              <div class="flex justify-between items-center mb-3 text-sm font-semibold">
+                <span class="text-stone-600">Total:</span>
+                <span id="mini-cart-total" class="text-base font-bold text-stone-900">$0.00</span>
+              </div>
+              <a href="checkout.html" class="mini-cart-checkout-btn">Proceed to Checkout</a>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -463,5 +488,6 @@
 
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
