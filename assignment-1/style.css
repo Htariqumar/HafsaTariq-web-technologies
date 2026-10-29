@@ -224,43 +224,28 @@ hr { border: none; }
 }
 
 /* LANGUAGES */
-.lang-row {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 5px;
-  gap: 8px;
+.languages-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
 }
 
-.lang-item { text-align: center; flex: 1; }
-
-.lang-ring {
-  --pct: 0;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  margin: 0 auto 8px;
+.languages-list li {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: conic-gradient(var(--accent-light) calc(var(--pct) * 1%), var(--track-bg) 0);
-  position: relative;
-}
-
-.lang-ring::before {
-  content: "";
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  border-radius: 50%;
-  background-color: var(--sidebar-bg);
-}
-
-.lang-ring span {
-  position: relative;
-  font-size: 11.5px;
-  font-weight: 600;
+  gap: 10px;
+  font-size: 13px;
   color: var(--sidebar-heading);
-  z-index: 1;
+  margin-bottom: 8px;
+}
+
+.languages-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-light);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 

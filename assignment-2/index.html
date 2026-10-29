@@ -7,68 +7,71 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="dist/output.css">
 </head>
-<body>
+<body class="bg-[#ece9e3] text-stone-900">
 
   <!-- Announcement bar -->
-  <div class="announcement">
+  <div class="sticky top-0 z-40 flex h-10 items-center justify-center bg-stone-900 text-xs text-white md:text-sm">
     <p>Free shipping on orders over $75</p>
   </div>
 
   <!-- Header -->
-  <header class="header">
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <div class="header-bar">
+  <header class="group sticky top-10 z-30 p-3">
+    <input type="checkbox" id="menu-toggle" class="hidden">
 
-      <label for="menu-toggle" class="menu-button" aria-label="Menu">
-        <i class="bi bi-list icon-open"></i>
-        <i class="bi bi-x icon-close"></i>
+    <div class="grid grid-cols-[1fr_auto_1fr] items-center rounded-2xl bg-white px-4 shadow-sm md:flex md:justify-between md:px-6">
+
+      <!-- Hamburger (phone only) -->
+      <label for="menu-toggle" class="cursor-pointer text-2xl md:hidden" aria-label="Menu">
+        <i class="bi bi-list group-has-[:checked]:hidden"></i>
+        <i class="bi bi-x hidden group-has-[:checked]:inline"></i>
       </label>
 
-      <a href="index.html" class="logo">Stride</a>
+      <a href="index.html" class="py-3 text-2xl font-bold md:py-0">Stride</a>
 
-      <nav class="nav">
-        <a href="#" class="nav-link">New Arrivals</a>
-        <a href="#" class="nav-link">Shop All</a>
+      <!-- Nav: dropdown panel on phone, normal row on tablet and desktop -->
+      <nav class="absolute inset-x-3 top-full hidden flex-col gap-1 rounded-2xl bg-white p-4 text-base font-medium uppercase shadow-lg group-has-[:checked]:flex md:static md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:text-sm md:shadow-none">
+        <a href="#" class="block py-3 md:py-5">New Arrivals</a>
+        <a href="#" class="block py-3 md:py-5">Shop All</a>
 
         <!-- Men menu -->
-        <div class="nav-item">
-          <a href="#" class="nav-link">Men</a>
-          <div class="dropdown">
-            <div class="dropdown-title">Men's</div>
-            <div class="dropdown-columns">
+        <div class="group/item">
+          <a href="#" class="block py-3 md:py-5">Men</a>
+          <div class="absolute inset-x-0 top-full -mt-3 hidden bg-[#ece9e3] px-3 pt-3 pb-10 text-sm font-normal normal-case md:group-hover/item:block">
+            <div class="rounded-2xl bg-[#e0dacf] py-5 text-center font-medium">Men's</div>
+            <div class="flex flex-wrap gap-x-16 gap-y-8 pt-10">
 
-              <ul class="dropdown-top-links">
+              <ul class="space-y-6 font-semibold uppercase">
                 <li><a href="#">New Arrivals</a></li>
                 <li><a href="#">Bestsellers</a></li>
                 <li><a href="#">Sale</a></li>
               </ul>
 
               <div>
-                <h3 class="dropdown-heading">Men's Shoes</h3>
-                <ul class="dropdown-list">
-                  <li><a href="#">Shop All</a></li>
-                  <li><a href="#">Sneakers</a></li>
-                  <li><a href="#">Slip-Ons</a></li>
-                  <li><a href="#">Sandals</a></li>
-                  <li><a href="#">Active</a></li>
-                  <li><a href="#">All-Weather</a></li>
+                <h3 class="mb-6 font-semibold uppercase">Men's Shoes</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Shop All</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Sneakers</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Slip-Ons</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Sandals</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Active</a></li>
+                  <li class="hover:text-stone-900"><a href="#">All-Weather</a></li>
                 </ul>
               </div>
 
               <div>
-                <h3 class="dropdown-heading">Collections</h3>
-                <ul class="dropdown-list">
-                  <li><a href="#">Everyday</a></li>
-                  <li><a href="#">Weekend</a></li>
-                  <li><a href="#">Travel</a></li>
+                <h3 class="mb-6 font-semibold uppercase">Collections</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Everyday</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Weekend</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Travel</a></li>
                 </ul>
               </div>
 
               <div>
-                <h3 class="dropdown-heading">Apparel &amp; Accessories</h3>
-                <ul class="dropdown-list">
-                  <li><a href="#">Socks</a></li>
-                  <li><a href="#">Men's Apparel</a></li>
+                <h3 class="mb-6 font-semibold uppercase">Apparel &amp; Accessories</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Socks</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Men's Apparel</a></li>
                 </ul>
               </div>
 
@@ -77,45 +80,45 @@
         </div>
 
         <!-- Women menu -->
-        <div class="nav-item">
-          <a href="#" class="nav-link">Women</a>
-          <div class="dropdown">
-            <div class="dropdown-title">Women's</div>
-            <div class="dropdown-columns">
+        <div class="group/item">
+          <a href="#" class="block py-3 md:py-5">Women</a>
+          <div class="absolute inset-x-0 top-full -mt-3 hidden bg-[#ece9e3] px-3 pt-3 pb-10 text-sm font-normal normal-case md:group-hover/item:block">
+            <div class="rounded-2xl bg-[#e0dacf] py-5 text-center font-medium">Women's</div>
+            <div class="flex flex-wrap gap-x-16 gap-y-8 pt-10">
 
-              <ul class="dropdown-top-links">
+              <ul class="space-y-6 font-semibold uppercase">
                 <li><a href="#">New Arrivals</a></li>
                 <li><a href="#">Bestsellers</a></li>
               </ul>
 
               <div>
-                <h3 class="dropdown-heading">Women's Shoes</h3>
-                <ul class="dropdown-list">
-                  <li><a href="#">Shop All</a></li>
-                  <li><a href="#">Trainers</a></li>
-                  <li><a href="#">Sneakers</a></li>
-                  <li><a href="#">Flats</a></li>
-                  <li><a href="#">Sandals</a></li>
-                  <li><a href="#">Slip-Ons</a></li>
-                  <li><a href="#">Active</a></li>
-                  <li><a href="#">All-Weather</a></li>
+                <h3 class="mb-6 font-semibold uppercase">Women's Shoes</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Shop All</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Trainers</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Sneakers</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Flats</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Sandals</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Slip-Ons</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Active</a></li>
+                  <li class="hover:text-stone-900"><a href="#">All-Weather</a></li>
                 </ul>
               </div>
 
               <div>
-                <h3 class="dropdown-heading">Popular Picks</h3>
-                <ul class="dropdown-list">
-                  <li><a href="#">Everyday</a></li>
-                  <li><a href="#">Weekend</a></li>
-                  <li><a href="#">Travel</a></li>
+                <h3 class="mb-6 font-semibold uppercase">Popular Picks</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Everyday</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Weekend</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Travel</a></li>
                 </ul>
               </div>
 
               <div>
-                <h3 class="dropdown-heading">Apparel &amp; Accessories</h3>
-                <ul class="dropdown-list">
-                  <li><a href="#">Socks</a></li>
-                  <li><a href="#">Women's Apparel</a></li>
+                <h3 class="mb-6 font-semibold uppercase">Apparel &amp; Accessories</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Socks</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Women's Apparel</a></li>
                 </ul>
               </div>
 
@@ -124,241 +127,246 @@
         </div>
       </nav>
 
-      <div class="icons">
-        <a href="#" aria-label="Search"><i class="bi bi-search icon"></i></a>
-        <a href="#" aria-label="Cart"><i class="bi bi-bag icon"></i></a>
+      <!-- Icons -->
+      <div class="flex items-center justify-self-end gap-4">
+        <a href="#" aria-label="Search"><i class="bi bi-search text-xl"></i></a>
+        <a href="#" aria-label="Cart"><i class="bi bi-bag text-xl"></i></a>
       </div>
 
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-label">New season collection</p>
-      <h1 class="hero-title">Light on your feet. Easy all day.</h1>
-      <div class="hero-buttons">
-        <a href="#" class="hero-button">Shop Men</a>
-        <a href="#" class="hero-button">Shop Women</a>
+  <section class="mx-3 flex min-h-[75vh] items-end rounded-3xl bg-linear-to-br from-stone-500 to-stone-800 p-5 md:min-h-[70vh] md:p-6">
+    <div class="max-w-xl text-white md:ml-auto md:text-right">
+      <p class="mb-2 font-mono text-xs uppercase tracking-widest">New season collection</p>
+      <h1 class="mb-6 text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">Light on your feet. Easy all day.</h1>
+      <div class="flex gap-3 md:justify-end">
+        <a href="#" class="w-32 rounded-full bg-white py-2.5 text-center text-sm font-semibold text-black uppercase hover:bg-stone-200 md:w-36">Shop Men</a>
+        <a href="#" class="w-32 rounded-full bg-white py-2.5 text-center text-sm font-semibold text-black uppercase hover:bg-stone-200 md:w-36">Shop Women</a>
       </div>
     </div>
   </section>
 
-  <!-- Category tiles -->
-  <section class="tiles">
-    <a href="#" class="tile tile-new">
-      <span class="tile-label">New Arrivals</span>
+  <!-- Category tiles: swipe on phone, 4 columns from tablet up -->
+  <section class="no-scrollbar mx-3 mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto md:grid md:grid-cols-4 md:overflow-visible">
+    <a href="#" class="flex aspect-[4/5] w-[72%] flex-none snap-start items-center justify-center rounded-3xl bg-[#5f7487] md:w-auto">
+      <span class="rounded-full border border-white px-3 py-1.5 text-xs font-medium text-white uppercase md:px-5 md:text-sm">New Arrivals</span>
     </a>
-    <a href="#" class="tile tile-men">
-      <span class="tile-label">Men's</span>
+    <a href="#" class="flex aspect-[4/5] w-[72%] flex-none snap-start items-center justify-center rounded-3xl bg-[#564a4a] md:w-auto">
+      <span class="rounded-full border border-white px-3 py-1.5 text-xs font-medium text-white uppercase md:px-5 md:text-sm">Men's</span>
     </a>
-    <a href="#" class="tile tile-women">
-      <span class="tile-label">Women's</span>
+    <a href="#" class="flex aspect-[4/5] w-[72%] flex-none snap-start items-center justify-center rounded-3xl bg-[#916d68] md:w-auto">
+      <span class="rounded-full border border-white px-3 py-1.5 text-xs font-medium text-white uppercase md:px-5 md:text-sm">Women's</span>
     </a>
-    <a href="#" class="tile tile-best">
-      <span class="tile-label">Best Sellers</span>
+    <a href="#" class="flex aspect-[4/5] w-[72%] flex-none snap-start items-center justify-center rounded-3xl bg-[#848b80] md:w-auto">
+      <span class="rounded-full border border-white px-3 py-1.5 text-xs font-medium text-white uppercase md:px-5 md:text-sm">Best Sellers</span>
     </a>
   </section>
 
   <!-- Best sellers -->
-  <section class="products">
+  <section class="mx-3 mt-12">
 
-    <div class="products-header">
-      <h2 class="section-title">Best Sellers</h2>
-      <div class="arrows">
-        <button class="arrow-button" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
-        <button class="arrow-button" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+    <div class="mb-6 flex items-center justify-between px-1">
+      <h2 class="text-lg font-medium uppercase underline underline-offset-8 md:text-xl">Best Sellers</h2>
+      <div class="hidden gap-2 md:flex">
+        <button class="flex h-12 w-12 items-center justify-center rounded-full border border-stone-900 text-lg hover:bg-white" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+        <button class="flex h-12 w-12 items-center justify-center rounded-full border border-stone-900 text-lg hover:bg-white" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
       </div>
     </div>
 
-    <div class="product-slider">
+    <div class="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto">
 
-      <article class="product-card">
-        <span class="product-badge">New</span>
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">Everyday Slip-On</h3>
-        <p class="product-color">Warm White</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #e8e0d2"></span>
-          <span class="product-price">$75</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="flex h-8 items-start"><span class="rounded-full bg-[#ece9e3] px-4 py-1.5 text-sm font-medium uppercase">New</span></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">Everyday Slip-On</h3>
+        <p class="mt-1 text-base text-stone-600">Warm White</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#e8e0d2]"></span>
+          <span class="text-base font-medium">$75</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
-      <article class="product-card">
-        <span class="product-badge">New</span>
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">Breeze Sneaker</h3>
-        <p class="product-color">Cloud White</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #e3e7e4"></span>
-          <span class="product-price">$100</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="flex h-8 items-start"><span class="rounded-full bg-[#ece9e3] px-4 py-1.5 text-sm font-medium uppercase">New</span></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">Breeze Sneaker</h3>
+        <p class="mt-1 text-base text-stone-600">Cloud White</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#e3e7e4]"></span>
+          <span class="text-base font-medium">$100</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
-      <article class="product-card">
-        <span class="product-badge">New</span>
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">Trail Walker</h3>
-        <p class="product-color">Stone</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #a89f94"></span>
-          <span class="product-price">$105</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="flex h-8 items-start"><span class="rounded-full bg-[#ece9e3] px-4 py-1.5 text-sm font-medium uppercase">New</span></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">Trail Walker</h3>
+        <p class="mt-1 text-base text-stone-600">Stone</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#a89f94]"></span>
+          <span class="text-base font-medium">$105</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
-      <article class="product-card">
-        <span class="product-badge">New</span>
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">Cloud Runner</h3>
-        <p class="product-color">Charcoal</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #5b5658"></span>
-          <span class="product-price">$110</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="flex h-8 items-start"><span class="rounded-full bg-[#ece9e3] px-4 py-1.5 text-sm font-medium uppercase">New</span></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">Cloud Runner</h3>
+        <p class="mt-1 text-base text-stone-600">Charcoal</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#5b5658]"></span>
+          <span class="text-base font-medium">$110</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
-      <article class="product-card">
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">City Loafer</h3>
-        <p class="product-color">Sand</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #d6c7ad"></span>
-          <span class="product-price">$95</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="h-8"></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">City Loafer</h3>
+        <p class="mt-1 text-base text-stone-600">Sand</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#d6c7ad]"></span>
+          <span class="text-base font-medium">$95</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
-      <article class="product-card">
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">Dash Lite</h3>
-        <p class="product-color">Midnight Blue</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #2f3e55"></span>
-          <span class="product-price">$90</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="h-8"></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">Dash Lite</h3>
+        <p class="mt-1 text-base text-stone-600">Midnight Blue</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#2f3e55]"></span>
+          <span class="text-base font-medium">$90</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
-      <article class="product-card">
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">Weekend Canvas</h3>
-        <p class="product-color">Sage Green</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #8c9a8a"></span>
-          <span class="product-price">$85</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="h-8"></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">Weekend Canvas</h3>
+        <p class="mt-1 text-base text-stone-600">Sage Green</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#8c9a8a]"></span>
+          <span class="text-base font-medium">$85</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
-      <article class="product-card">
-        <a href="product.html" class="product-image"></a>
-        <h3 class="product-name">Storm Boot</h3>
-        <p class="product-color">Forest Green</p>
-        <div class="product-bottom">
-          <span class="product-swatch" style="background-color: #3a4d3f"></span>
-          <span class="product-price">$135</span>
+      <article class="flex w-[78%] min-w-64 flex-none snap-start flex-col rounded-3xl bg-white p-6 md:w-[42%] lg:w-[27%]">
+        <div class="h-8"></div>
+        <a href="product.html" class="my-6 block aspect-square rounded-xl bg-stone-100"></a>
+        <h3 class="text-base font-medium uppercase">Storm Boot</h3>
+        <p class="mt-1 text-base text-stone-600">Forest Green</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="h-8 w-8 rounded-full border border-stone-300 bg-[#3a4d3f]"></span>
+          <span class="text-base font-medium">$135</span>
         </div>
-        <button class="add-button">Add to Cart</button>
+        <button class="mt-5 rounded-full bg-stone-900 py-3 text-base font-semibold text-white hover:bg-stone-700">Add to Cart</button>
       </article>
 
     </div>
   </section>
 
-  <!-- Promo tiles -->
-  <section class="promos">
+  <!-- Promo tiles: one per row on phone, three columns from tablet up -->
+  <section class="mx-3 mt-12 grid grid-cols-1 gap-3 md:grid-cols-3">
 
-    <div class="promo promo-one">
-      <div class="promo-heading">
-        <h2 class="promo-title">Weekend Essentials</h2>
+    <div class="flex aspect-[3/4] flex-col rounded-3xl bg-linear-to-br from-emerald-800 to-stone-700 p-6 text-white md:p-4 lg:p-6">
+      <div class="flex flex-1 items-center justify-center">
+        <h2 class="text-center font-serif text-4xl leading-tight md:text-3xl lg:text-5xl">Weekend Essentials</h2>
       </div>
-      <div class="promo-buttons">
-        <a href="#" class="promo-button">Shop Men</a>
-        <a href="#" class="promo-button">Shop Women</a>
+      <div class="flex gap-3">
+        <a href="#" class="flex-1 rounded-full border border-white py-2.5 text-center text-sm font-medium uppercase hover:bg-white hover:text-black md:text-xs lg:text-sm">Shop Men</a>
+        <a href="#" class="flex-1 rounded-full border border-white py-2.5 text-center text-sm font-medium uppercase hover:bg-white hover:text-black md:text-xs lg:text-sm">Shop Women</a>
       </div>
     </div>
 
-    <div class="promo promo-two">
-      <div class="promo-heading">
-        <h2 class="promo-title">Just Landed</h2>
+    <div class="flex aspect-[3/4] flex-col rounded-3xl bg-linear-to-br from-orange-400 to-rose-700 p-6 text-white md:p-4 lg:p-6">
+      <div class="flex flex-1 items-center justify-center">
+        <h2 class="text-center font-serif text-4xl leading-tight md:text-3xl lg:text-5xl">Just Landed</h2>
       </div>
-      <div class="promo-buttons">
-        <a href="#" class="promo-button">Shop Men</a>
-        <a href="#" class="promo-button">Shop Women</a>
+      <div class="flex gap-3">
+        <a href="#" class="flex-1 rounded-full border border-white py-2.5 text-center text-sm font-medium uppercase hover:bg-white hover:text-black md:text-xs lg:text-sm">Shop Men</a>
+        <a href="#" class="flex-1 rounded-full border border-white py-2.5 text-center text-sm font-medium uppercase hover:bg-white hover:text-black md:text-xs lg:text-sm">Shop Women</a>
       </div>
     </div>
 
-    <div class="promo promo-three">
-      <div class="promo-heading">
-        <h2 class="promo-title">Fresh Colours</h2>
+    <div class="flex aspect-[3/4] flex-col rounded-3xl bg-linear-to-br from-sky-500 to-stone-600 p-6 text-white md:p-4 lg:p-6">
+      <div class="flex flex-1 items-center justify-center">
+        <h2 class="text-center font-serif text-4xl leading-tight md:text-3xl lg:text-5xl">Fresh Colours</h2>
       </div>
-      <div class="promo-buttons">
-        <a href="#" class="promo-button">Shop Women</a>
+      <div class="flex gap-3">
+        <a href="#" class="flex-1 rounded-full border border-white py-2.5 text-center text-sm font-medium uppercase hover:bg-white hover:text-black md:text-xs lg:text-sm">Shop Women</a>
       </div>
     </div>
 
   </section>
 
   <!-- Info cards -->
-  <section class="info">
-    <div class="info-card">
-      <h3 class="info-title">Comfort that lasts</h3>
-      <p class="info-text">Soft, light and springy, our shoes are made to feel good from the first step to the last. Slip them on and keep going.</p>
+  <section class="mx-3 mt-3 grid grid-cols-1 gap-3 md:grid-cols-3">
+    <div class="rounded-2xl bg-white p-6 md:min-h-64 md:p-5 lg:p-8">
+      <h3 class="mb-8 font-mono text-xs uppercase tracking-widest">Comfort that lasts</h3>
+      <p class="leading-relaxed">Soft, light and springy, our shoes are made to feel good from the first step to the last. Slip them on and keep going.</p>
     </div>
-    <div class="info-card">
-      <h3 class="info-title">Made for daily life</h3>
-      <p class="info-text">Simple styles for busy mornings, weekend plans and long walks, with nothing complicated in between.</p>
+    <div class="rounded-2xl bg-white p-6 md:min-h-64 md:p-5 lg:p-8">
+      <h3 class="mb-8 font-mono text-xs uppercase tracking-widest">Made for daily life</h3>
+      <p class="leading-relaxed">Simple styles for busy mornings, weekend plans and long walks, with nothing complicated in between.</p>
     </div>
-    <div class="info-card">
-      <h3 class="info-title">Better materials</h3>
-      <p class="info-text">We choose natural and recycled materials wherever we can, so your shoes are breathable and kinder to the planet.</p>
+    <div class="rounded-2xl bg-white p-6 md:min-h-64 md:p-5 lg:p-8">
+      <h3 class="mb-8 font-mono text-xs uppercase tracking-widest">Better materials</h3>
+      <p class="leading-relaxed">We choose natural and recycled materials wherever we can, so your shoes are breathable and kinder to the planet.</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="mt-3 flex flex-col gap-12 bg-stone-900 px-6 py-12 text-white md:gap-16 md:px-12 md:py-16">
 
-    <div class="footer-top">
+    <div class="grid gap-10 lg:grid-cols-2">
 
       <div>
-        <h4 class="footer-heading">Subscribe to our emails</h4>
-        <form action="#" class="signup">
-          <input type="email" placeholder="Email Address" class="signup-input">
-          <button type="button" class="signup-button">Sign up</button>
+        <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Subscribe to our emails</h4>
+        <form action="#" class="flex max-w-md items-center rounded-full bg-white py-2 pr-3 pl-5">
+          <input type="email" placeholder="Email Address" class="min-w-0 flex-1 bg-transparent py-2 text-stone-900 outline-none">
+          <button type="button" class="px-4 text-sm font-semibold text-stone-900 uppercase">Sign up</button>
         </form>
       </div>
 
-      <div class="footer-columns">
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
         <div>
-          <h4 class="footer-heading">Help</h4>
-          <ul class="footer-list">
-            <li><a href="#">help@stride.example</a></li>
-            <li><a href="#">FAQ / Contact Us</a></li>
-            <li><a href="#">Returns / Exchanges</a></li>
+          <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Help</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#" class="hover:underline">help@stride.example</a></li>
+            <li><a href="#" class="hover:underline">FAQ / Contact Us</a></li>
+            <li><a href="#" class="hover:underline">Returns / Exchanges</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Shop</h4>
-          <ul class="footer-list">
-            <li><a href="#">Men's Shoes</a></li>
-            <li><a href="#">Women's Shoes</a></li>
-            <li><a href="#">Men's Apparel</a></li>
-            <li><a href="#">Women's Apparel</a></li>
+          <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Shop</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#" class="hover:underline">Men's Shoes</a></li>
+            <li><a href="#" class="hover:underline">Women's Shoes</a></li>
+            <li><a href="#" class="hover:underline">Men's Apparel</a></li>
+            <li><a href="#" class="hover:underline">Women's Apparel</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Company</h4>
-          <ul class="footer-list">
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Materials</a></li>
-            <li><a href="#">Shoe Care</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Careers</a></li>
+          <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Company</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#" class="hover:underline">Our Story</a></li>
+            <li><a href="#" class="hover:underline">Materials</a></li>
+            <li><a href="#" class="hover:underline">Shoe Care</a></li>
+            <li><a href="#" class="hover:underline">Press</a></li>
+            <li><a href="#" class="hover:underline">Careers</a></li>
           </ul>
         </div>
       </div>
@@ -366,18 +374,18 @@
     </div>
 
     <div>
-      <h4 class="footer-heading">Follow us</h4>
-      <div class="social">
-        <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="social-link" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
-        <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="social-link" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-        <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Follow us</h4>
+      <div class="flex gap-3">
+        <a href="#" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-lg hover:bg-white hover:text-stone-900 md:h-12 md:w-12 md:text-xl"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Pinterest" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-lg hover:bg-white hover:text-stone-900 md:h-12 md:w-12 md:text-xl"><i class="bi bi-pinterest"></i></a>
+        <a href="#" aria-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-lg hover:bg-white hover:text-stone-900 md:h-12 md:w-12 md:text-xl"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="X" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-lg hover:bg-white hover:text-stone-900 md:h-12 md:w-12 md:text-xl"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="TikTok" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-lg hover:bg-white hover:text-stone-900 md:h-12 md:w-12 md:text-xl"><i class="bi bi-tiktok"></i></a>
+        <a href="#" aria-label="YouTube" class="flex h-10 w-10 items-center justify-center rounded-full border border-white text-lg hover:bg-white hover:text-stone-900 md:h-12 md:w-12 md:text-xl"><i class="bi bi-youtube"></i></a>
       </div>
     </div>
 
-    <p class="footer-bottom">© 2026 Stride. Student project for web technologies, not a real store.</p>
+    <p class="border-t border-stone-700 pt-6 text-xs text-stone-400">© 2026 Stride. Student project for web technologies, not a real store.</p>
 
   </footer>
 
