@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Stride</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body class="bg-[#ece9e3] text-stone-900">
+
+  <!-- Announcement bar -->
+  <div class="sticky top-0 z-40 flex h-10 items-center justify-center bg-stone-900 text-xs text-white md:text-sm">
+    <p>Free shipping on orders over $75</p>
+  </div>
+
+  <!-- Header -->
+  <header class="group sticky top-10 z-50 p-3 relative">
+    <input type="checkbox" id="menu-toggle" class="hidden">
+
+    <div class="header-bar-bp grid grid-cols-[1fr_auto_1fr] items-center rounded-2xl bg-white px-4 shadow-sm">
+
+      <!-- Hamburger (phone only below BP) -->
+      <label for="menu-toggle" class="hamburger-bp cursor-pointer text-2xl" aria-label="Menu">
+        <i class="bi bi-list group-has-[:checked]:hidden"></i>
+        <i class="bi bi-x hidden group-has-[:checked]:inline"></i>
+      </label>
+
+      <a href="index.html" class="py-3 text-2xl font-bold">Stride</a>
+
+      <!-- Nav: dropdown panel on phone, normal row on tablet and desktop -->
+      <nav class="nav-bp absolute inset-x-3 top-full hidden flex-col gap-1 rounded-2xl bg-white p-4 text-base font-medium uppercase shadow-lg group-has-[:checked]:flex">
+        <!-- Task 1: Shop by Category Mega-Menu (K = 5, BP = 638px) -->
+        <div class="category-menu-item">
+          <a href="#category-panel" class="category-menu-btn nav-bp-link" tabindex="0">
+            Shop by Category
+            <i class="bi bi-chevron-down category-btn-icon"></i>
+          </a>
+
+          <div id="category-panel" class="category-mega-panel">
+            <div class="category-columns-grid">
+
+              <!-- Column 1 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Men's Shoes</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">Running Shoes</a></li>
+                  <li><a href="#">Everyday Slip-Ons</a></li>
+                  <li><a href="#">Leather Loafers</a></li>
+                  <li><a href="#">Trail Walkers</a></li>
+                  <li><a href="#">All-Weather Boots</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 2 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Women's Shoes</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">Daily Trainers</a></li>
+                  <li><a href="#">Flat Slip-Ons</a></li>
+                  <li><a href="#">Breeze Sneakers</a></li>
+                  <li><a href="#">Canvas Flats</a></li>
+                  <li><a href="#">Cloud Runners</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 3 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Kids &amp; Youth</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">School Everyday</a></li>
+                  <li><a href="#">Sport Runners</a></li>
+                  <li><a href="#">Slip-On Play</a></li>
+                  <li><a href="#">Waterproof Boots</a></li>
+                  <li><a href="#">Toddler First Steps</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 4 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Apparel &amp; Socks</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">Ankle Socks</a></li>
+                  <li><a href="#">Crew Running Socks</a></li>
+                  <li><a href="#">Merino Wool Tees</a></li>
+                  <li><a href="#">Relaxed Sweatpants</a></li>
+                  <li><a href="#">Organic Caps</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 5 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Collections &amp; Sale</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">New Season Arrivals</a></li>
+                  <li><a href="#">Bestsellers Pack</a></li>
+                  <li><a href="#">Limited Editions</a></li>
+                  <li><a href="#">Sustainable Series</a></li>
+                  <li><a href="#">Clearance Sale</a></li>
+                </ul>
+              </details>
+
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="nav-bp-link block py-3">New Arrivals</a>
+        <a href="#" class="nav-bp-link block py-3">Shop All</a>
+
+        <!-- Men menu -->
+        <div class="group/item">
+          <a href="#" class="block py-3 md:py-5">Men</a>
+          <div class="absolute inset-x-0 top-full -mt-3 hidden bg-[#ece9e3] px-3 pt-3 pb-10 text-sm font-normal normal-case md:group-hover/item:block">
+            <div class="rounded-2xl bg-[#e0dacf] py-5 text-center font-medium">Men's</div>
+            <div class="flex flex-wrap gap-x-16 gap-y-8 pt-10">
+              <ul class="space-y-6 font-semibold uppercase">
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Bestsellers</a></li>
+                <li><a href="#">Sale</a></li>
+              </ul>
+              <div>
+                <h3 class="mb-6 font-semibold uppercase">Men's Shoes</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Shop All</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Sneakers</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Slip-Ons</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Women menu -->
+        <div class="group/item">
+          <a href="#" class="block py-3 md:py-5">Women</a>
+          <div class="absolute inset-x-0 top-full -mt-3 hidden bg-[#ece9e3] px-3 pt-3 pb-10 text-sm font-normal normal-case md:group-hover/item:block">
+            <div class="rounded-2xl bg-[#e0dacf] py-5 text-center font-medium">Women's</div>
+            <div class="flex flex-wrap gap-x-16 gap-y-8 pt-10">
+              <ul class="space-y-6 font-semibold uppercase">
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Bestsellers</a></li>
+              </ul>
+              <div>
+                <h3 class="mb-6 font-semibold uppercase">Women's Shoes</h3>
+                <ul class="space-y-3 text-stone-600">
+                  <li class="hover:text-stone-900"><a href="#">Shop All</a></li>
+                  <li class="hover:text-stone-900"><a href="#">Trainers</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Icons: Cart icon links to checkout.html -->
+      <div class="flex items-center justify-self-end gap-4">
+        <a href="#" aria-label="Search"><i class="bi bi-search text-xl"></i></a>
+        <a href="checkout.html" aria-label="Cart" class="text-stone-900 hover:text-stone-600"><i class="bi bi-bag text-xl"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="mx-3 mt-2">
+    <nav class="flex gap-2 px-4 py-3 text-sm text-stone-600">
+      <a href="index.html" class="hover:underline">Home</a>
+      <span>/</span>
+      <span class="text-stone-900 font-medium">Checkout</span>
+    </nav>
+  </div>
+
+  <!-- Main Checkout Content -->
+  <main class="checkout-wrapper">
+    <div class="checkout-box">
+      <h1 class="checkout-heading">Checkout</h1>
+      <p class="checkout-subtext">Complete your order below. All fields are required.</p>
+
+      <form action="#" method="post" class="checkout-form" novalidate>
+        <div class="checkout-fieldsets-grid">
+
+          <!-- Fieldset 1: Contact -->
+          <fieldset class="checkout-fieldset">
+            <legend class="checkout-legend">Contact</legend>
+
+            <!-- Full Name -->
+            <div class="form-row">
+              <label for="fullname" class="form-label">Full Name</label>
+              <div class="form-control-col">
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  class="form-input"
+                  placeholder=" "
+                  required
+                >
+                <span class="error-msg">Please enter your full name.</span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-row">
+              <label for="email" class="form-label">Email</label>
+              <div class="form-control-col">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder=" "
+                  required
+                >
+                <span class="error-msg">Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <!-- Phone (format 03XX-XXXXXXX) -->
+            <div class="form-row">
+              <label for="phone" class="form-label">Phone</label>
+              <div class="form-control-col">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="03XX-XXXXXXX"
+                  pattern="03[0-9]{2}-[0-9]{7}"
+                  required
+                >
+                <span class="error-msg">Format must be 03XX-XXXXXXX (e.g. 0300-1234567).</span>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <!-- Fieldset 2: Delivery -->
+          <fieldset class="checkout-fieldset">
+            <legend class="checkout-legend">Delivery</legend>
+
+            <!-- Address -->
+            <div class="form-row">
+              <label for="address" class="form-label">Address</label>
+              <div class="form-control-col">
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  class="form-input"
+                  placeholder=" "
+                  required
+                >
+                <span class="error-msg">Please enter your street delivery address.</span>
+              </div>
+            </div>
+
+            <!-- City (as <select>) -->
+            <div class="form-row">
+              <label for="city" class="form-label">City</label>
+              <div class="form-control-col">
+                <select id="city" name="city" class="form-select" required>
+                  <option value="" disabled selected>Select your city</option>
+                  <option value="Lahore">Lahore</option>
+                  <option value="Karachi">Karachi</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Rawalpindi">Rawalpindi</option>
+                  <option value="Faisalabad">Faisalabad</option>
+                  <option value="Multan">Multan</option>
+                  <option value="Peshawar">Peshawar</option>
+                  <option value="Quetta">Quetta</option>
+                  <option value="Sialkot">Sialkot</option>
+                  <option value="Gujranwala">Gujranwala</option>
+                </select>
+                <span class="error-msg">Please select your delivery city.</span>
+              </div>
+            </div>
+
+            <!-- Delivery Date (min = 2026-10-29, max = 2026-12-06 for N=38 days) -->
+            <div class="form-row">
+              <label for="delivery-date" class="form-label">Delivery Date</label>
+              <div class="form-control-col">
+                <input
+                  type="date"
+                  id="delivery-date"
+                  name="delivery-date"
+                  class="form-input"
+                  min="2026-10-29"
+                  max="2026-12-06"
+                  required
+                >
+                <span class="error-msg">Date must be between 2026-10-29 and 2026-12-06 (N=38 days).</span>
+              </div>
+            </div>
+
+          </fieldset>
+
+        </div>
+
+        <!-- Submit Button (Full width at every size) -->
+        <button type="submit" class="checkout-submit-btn">Place Order</button>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-12 flex flex-col gap-12 bg-stone-900 px-6 py-12 text-white md:gap-16 md:px-12 md:py-16">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Subscribe to our emails</h4>
+        <form action="#" class="flex max-w-md items-center rounded-full bg-white py-2 pr-3 pl-5">
+          <input type="email" placeholder="Email Address" class="min-w-0 flex-1 bg-transparent py-2 text-stone-900 outline-none">
+          <button type="button" class="px-4 text-sm font-semibold text-stone-900 uppercase">Sign up</button>
+        </form>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+        <div>
+          <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Help</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#" class="hover:underline">help@stride.example</a></li>
+            <li><a href="#" class="hover:underline">FAQ / Contact Us</a></li>
+            <li><a href="#" class="hover:underline">Returns / Exchanges</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Shop</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#" class="hover:underline">Men's Shoes</a></li>
+            <li><a href="#" class="hover:underline">Women's Shoes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="mb-8 font-mono text-xs uppercase tracking-widest">Company</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="#" class="hover:underline">Our Story</a></li>
+            <li><a href="#" class="hover:underline">Materials</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="border-t border-stone-700 pt-6 text-xs text-stone-400">© 2026 Stride. Student project for web technologies, not a real store.</p>
+  </footer>
+
+</body>
+</html>

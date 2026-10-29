@@ -288,3 +288,177 @@
     outline: none;
   }
 }
+
+/* =========================================================
+   TASK 2: Checkout Form & HTML5 Validation (BP = 638px)
+   ========================================================= */
+.checkout-wrapper {
+  max-width: 1050px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+.checkout-box {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e7e5e4;
+}
+
+.checkout-heading {
+  font-family: serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1c1917;
+  line-height: 1.2;
+}
+
+.checkout-subtext {
+  color: #78716c;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.checkout-fieldset {
+  border: 1px solid #e7e5e4;
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background-color: #fafaf9;
+}
+
+.checkout-legend {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--midterm-accent);
+  padding: 0 0.5rem;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d6d3d1;
+  background-color: #ffffff;
+  color: #1c1917;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--midterm-accent);
+  box-shadow: 0 0 0 2px var(--midterm-accent-light);
+}
+
+/* Invalid styling: only after user has interacted with them (:user-invalid or :not(:placeholder-shown):invalid) */
+.form-input:user-invalid,
+.form-input:not(:placeholder-shown):invalid,
+.form-select:user-invalid {
+  border-color: #dc2626 !important;
+  background-color: #fff5f5 !important;
+}
+
+.error-msg {
+  display: none;
+  font-size: 0.785rem;
+  color: #dc2626;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+.form-input:user-invalid ~ .error-msg,
+.form-input:not(:placeholder-shown):invalid ~ .error-msg,
+.form-select:user-invalid ~ .error-msg {
+  display: block;
+}
+
+.checkout-submit-btn {
+  width: 100%;
+  display: block;
+  padding: 1.1rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background-color: var(--midterm-accent);
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 2rem;
+}
+
+.checkout-submit-btn:hover {
+  background-color: var(--midterm-accent-hover);
+}
+
+.checkout-submit-btn:active {
+  transform: scale(0.99);
+}
+
+/* --- BELOW BP (< 638px): 1 column with labels ABOVE inputs --- */
+@media (max-width: 637.98px) {
+  .checkout-fieldsets-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #44403c;
+  }
+}
+
+/* --- FROM BP AND WIDER (>= 638px): Fieldsets side by side, labels on left (CSS Grid) --- */
+@media (min-width: 638px) {
+  .checkout-fieldsets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    align-items: start;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .form-label {
+    padding-top: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #44403c;
+    text-align: right;
+  }
+
+  .form-control-col {
+    display: flex;
+    flex-direction: column;
+  }
+}
