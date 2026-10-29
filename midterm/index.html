@@ -15,23 +15,97 @@
   </div>
 
   <!-- Header -->
-  <header class="group sticky top-10 z-30 p-3">
+  <header class="group sticky top-10 z-50 p-3 relative">
     <input type="checkbox" id="menu-toggle" class="hidden">
 
-    <div class="grid grid-cols-[1fr_auto_1fr] items-center rounded-2xl bg-white px-4 shadow-sm md:flex md:justify-between md:px-6">
+    <div class="header-bar-bp grid grid-cols-[1fr_auto_1fr] items-center rounded-2xl bg-white px-4 shadow-sm">
 
-      <!-- Hamburger (phone only) -->
-      <label for="menu-toggle" class="cursor-pointer text-2xl md:hidden" aria-label="Menu">
+      <!-- Hamburger (phone only below BP) -->
+      <label for="menu-toggle" class="hamburger-bp cursor-pointer text-2xl" aria-label="Menu">
         <i class="bi bi-list group-has-[:checked]:hidden"></i>
         <i class="bi bi-x hidden group-has-[:checked]:inline"></i>
       </label>
 
-      <a href="index.html" class="py-3 text-2xl font-bold md:py-0">Stride</a>
+      <a href="index.html" class="py-3 text-2xl font-bold">Stride</a>
 
       <!-- Nav: dropdown panel on phone, normal row on tablet and desktop -->
-      <nav class="absolute inset-x-3 top-full hidden flex-col gap-1 rounded-2xl bg-white p-4 text-base font-medium uppercase shadow-lg group-has-[:checked]:flex md:static md:flex md:flex-row md:gap-8 md:rounded-none md:bg-transparent md:p-0 md:text-sm md:shadow-none">
-        <a href="#" class="block py-3 md:py-5">New Arrivals</a>
-        <a href="#" class="block py-3 md:py-5">Shop All</a>
+      <nav class="nav-bp absolute inset-x-3 top-full hidden flex-col gap-1 rounded-2xl bg-white p-4 text-base font-medium uppercase shadow-lg group-has-[:checked]:flex">
+        <!-- Task 1: Shop by Category Mega-Menu (K = 5, BP = 638px) -->
+        <div class="category-menu-item">
+          <a href="#category-panel" class="category-menu-btn nav-bp-link" tabindex="0">
+            Shop by Category
+            <i class="bi bi-chevron-down category-btn-icon"></i>
+          </a>
+
+          <div id="category-panel" class="category-mega-panel">
+            <div class="category-columns-grid">
+
+              <!-- Column 1 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Men's Shoes</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">Running Shoes</a></li>
+                  <li><a href="#">Everyday Slip-Ons</a></li>
+                  <li><a href="#">Leather Loafers</a></li>
+                  <li><a href="#">Trail Walkers</a></li>
+                  <li><a href="#">All-Weather Boots</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 2 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Women's Shoes</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">Daily Trainers</a></li>
+                  <li><a href="#">Flat Slip-Ons</a></li>
+                  <li><a href="#">Breeze Sneakers</a></li>
+                  <li><a href="#">Canvas Flats</a></li>
+                  <li><a href="#">Cloud Runners</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 3 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Kids &amp; Youth</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">School Everyday</a></li>
+                  <li><a href="#">Sport Runners</a></li>
+                  <li><a href="#">Slip-On Play</a></li>
+                  <li><a href="#">Waterproof Boots</a></li>
+                  <li><a href="#">Toddler First Steps</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 4 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Apparel &amp; Socks</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">Ankle Socks</a></li>
+                  <li><a href="#">Crew Running Socks</a></li>
+                  <li><a href="#">Merino Wool Tees</a></li>
+                  <li><a href="#">Relaxed Sweatpants</a></li>
+                  <li><a href="#">Organic Caps</a></li>
+                </ul>
+              </details>
+
+              <!-- Column 5 -->
+              <details class="category-col">
+                <summary class="category-col-heading">Collections &amp; Sale</summary>
+                <ul class="category-links-list">
+                  <li><a href="#">New Season Arrivals</a></li>
+                  <li><a href="#">Bestsellers Pack</a></li>
+                  <li><a href="#">Limited Editions</a></li>
+                  <li><a href="#">Sustainable Series</a></li>
+                  <li><a href="#">Clearance Sale</a></li>
+                </ul>
+              </details>
+
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="nav-bp-link block py-3">New Arrivals</a>
+        <a href="#" class="nav-bp-link block py-3">Shop All</a>
 
         <!-- Men menu -->
         <div class="group/item">
